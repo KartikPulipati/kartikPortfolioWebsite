@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro&display=swap');
+body {
+    background-color: #000;
+}
+*{
+    cursor: none !important;
+}
+.line{
+    width: 100%;
+    font: 1rem 'Source Code Pro', monospace;
+    margin-bottom: 10px;
+    
+}
+
+.terminalInput{
+    background-color: #000;
+    position: absolute;
+    pointer-events: all;
+    color: #18A558;
+    font: inherit;
+    border: none;
+    margin-left: 10px;
+}
+
+.terminalInput:focus{
+    outline: none;
+    caret-shape: block;
+}
+.root{
+    color: #f5084f;
+}
+.dir{
+    color: #149bda;
+}
+.sym{
+    color: #18A558;
+}
+.name{
+    color:#149bda;
+}
+</style>
+</head>
+<body>
+    <script>
+    function terminal(){
+        const div = document.createElement('div');
+        div.className = 'line';
+        div.innerHTML = 
+        '<span class="root">root</span><span class="name">@kartikpulipati:</span><span class="dir">~</span><span class="sym">$</span>';
+        document.body.appendChild(div);
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'terminalInput';
+        div.appendChild(input);
+        input.focus();
+        reSize();
+    };
+
+    function findLastLine(){
+        let inputVal = document.getElementsByClassName('terminalInput');
+        let last = inputVal[inputVal.length-1];
+        return last;
+    }
+    function reSize(){
+        findLastLine().style.width = document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px';
+        console.log(document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px');
+    }
+
+    terminal();
+
+    document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        let last = findLastLine().value;
+        if(last == 'cd projects'){
+            console.log(last)
+        }else{
+            terminal();
+            
+            
+        }
+         }
+
+    });
+
+    document.addEventListener('click', function(event){
+        findLastLine().focus();
+    });
+
+    window.onresize = reSize;
+    
+    </script>
+</body>
+</html>
