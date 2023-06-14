@@ -46,7 +46,7 @@ body {
     color:#149bda;
 }
 .error{
-    color: red;
+    color: #cc0000;
 }
 .info{
     color: #49759C;
@@ -81,6 +81,18 @@ body {
         findLastLine().style.width = document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px';
         console.log(document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px');
     }
+    function addLine(text, isError){
+        let div = document.createElement('div');
+        if(isError){
+            div.className = 'line error';
+        }
+        else{
+            div.className = 'line info';
+        }
+        div.innerHTML = text;
+        document.body.appendChild(div);
+        terminal();
+    }
 
     terminal();
 
@@ -89,56 +101,37 @@ body {
         let last = findLastLine().value.split(' ');
         if(last[0] == functions[0]){ //cd
             if(last.length > 2){
-                let div = document.createElement('div');
-                div.className = 'line error';
-                div.innerHTML = 'cd: too many arguments';
-                document.body.appendChild(div);
-                terminal();
+                addLine('cd: too many arguments', true);
             }
             else{
                 if (last[1] == '..'){
-                    let div = document.createElement('div');
-                    div.className = 'line error';
-                    div.innerHTML = 'cd: there is nothing back there';
-                    document.body.appendChild(div);
-                    terminal();
+                    addLine('cd: permission denied', true);
                 }
                 else if(dirList.includes(last[1])){
                     window.location.href = last[1] + '.html';
                 }
                 else{
-                    let div = document.createElement('div');
-                    div.className = 'line error';
-                    div.innerHTML = 'cd: no such file or directory: ' + last[1];
-                    document.body.appendChild(div);
-                    terminal();
+                    addLine('cd: no such file or directory: ' + last[1], true);
                 }
             }
         }
         else if(last[0] == functions[1]){ //ls
             if(last.length > 1){
-                let div = document.createElement('div');
-                div.className = 'line error';
-                div.innerHTML = 'ls: too many arguments';
-                document.body.appendChild(div);
-                terminal();
+                addLine('ls: too many arguments', true);
             }
             else{
-                let div = document.createElement('div');
-                div.className = 'line info';
-                div.innerHTML = dirList.join(' ');
-                document.body.appendChild(div);
-                terminal();
+                addLine(dirList.join(' '), false);
             }
          }
          else if(last[0] == functions[2]){ //help
-            console.log(last)
+            addLine("<p> cd - change directory to access the webpages </p> <p> ls - list directory contents you can cd into </p>" +
+            "<p> help - displays this help </p> <p> exit - exit the shell </p>", false);
          }
          else if(last[0] == functions[3]){ //exit
-            console.log(last)
+            window.close();
          }
          else{
-            console.log(last)
+            addLine('command not found: ' + last[0], true)
          }
         }
     });
