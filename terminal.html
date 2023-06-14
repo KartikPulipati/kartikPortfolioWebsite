@@ -45,10 +45,19 @@ body {
 .name{
     color:#149bda;
 }
+.error{
+    color: red;
+}
+.info{
+    color: #49759C;
+    margin-left: 2.5%;
+}
 </style>
 </head>
 <body>
     <script>
+    let functions = ['cd', 'ls', 'help', 'exit'];
+    let dirList = ['home', 'about', 'projects', 'contact'];
     function terminal(){
         const div = document.createElement('div');
         div.className = 'line';
@@ -77,16 +86,61 @@ body {
 
     document.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
-        let last = findLastLine().value;
-        if(last == 'cd projects'){
-            console.log(last)
-        }else{
-            terminal();
-            
-            
+        let last = findLastLine().value.split(' ');
+        if(last[0] == functions[0]){ //cd
+            if(last.length > 2){
+                let div = document.createElement('div');
+                div.className = 'line error';
+                div.innerHTML = 'cd: too many arguments';
+                document.body.appendChild(div);
+                terminal();
+            }
+            else{
+                if (last[1] == '..'){
+                    let div = document.createElement('div');
+                    div.className = 'line error';
+                    div.innerHTML = 'cd: there is nothing back there';
+                    document.body.appendChild(div);
+                    terminal();
+                }
+                else if(dirList.includes(last[1])){
+                    window.location.href = last[1] + '.html';
+                }
+                else{
+                    let div = document.createElement('div');
+                    div.className = 'line error';
+                    div.innerHTML = 'cd: no such file or directory: ' + last[1];
+                    document.body.appendChild(div);
+                    terminal();
+                }
+            }
         }
+        else if(last[0] == functions[1]){ //ls
+            if(last.length > 1){
+                let div = document.createElement('div');
+                div.className = 'line error';
+                div.innerHTML = 'ls: too many arguments';
+                document.body.appendChild(div);
+                terminal();
+            }
+            else{
+                let div = document.createElement('div');
+                div.className = 'line info';
+                div.innerHTML = dirList.join(' ');
+                document.body.appendChild(div);
+                terminal();
+            }
          }
-
+         else if(last[0] == functions[2]){ //help
+            console.log(last)
+         }
+         else if(last[0] == functions[3]){ //exit
+            console.log(last)
+         }
+         else{
+            console.log(last)
+         }
+        }
     });
 
     document.addEventListener('click', function(event){
