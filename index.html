@@ -1,61 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Kartik's Terminal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand&family=Source+Code+Pro&display=swap" rel="stylesheet"><style>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro&display=swap');
-body {
-    background-color: #000;
-}
-*{
-    cursor: none !important;
-}
-.line{
-    width: 100%;
-    font: 1rem 'Source Code Pro', monospace;
-    margin-bottom: 10px;
-    
-}
+    <title>Kartik's Terminal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand&family=Source+Code+Pro&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro&display=swap');
 
-.terminalInput{
-    background-color: #000;
-    position: absolute;
-    pointer-events: all;
-    color: #18A558;
-    font: inherit;
-    border: none;
-    margin-left: 10px;
-}
+        body {
+            background-color: #000;
+        }
 
-.terminalInput:focus{
-    outline: none;
-    caret-shape: block;
-}
-.root{
-    color: #f5084f;
-}
-.dir{
-    color: #149bda;
-}
-.sym{
-    color: #18A558;
-}
-.name{
-    color:#149bda;
-}
-.error{
-    color: #cc0000;
-}
-.info{
-    color: #49759C;
-    margin-left: 2.5%;
-}
-</style>
+        * {
+            cursor: none !important;
+        }
+
+        .line {
+            width: 100%;
+            font: 1rem 'Source Code Pro', monospace;
+            margin-bottom: 10px;
+
+        }
+
+        .terminalInput {
+            background-color: #000;
+            position: absolute;
+            pointer-events: all;
+            color: #18A558;
+            font: inherit;
+            border: none;
+            margin-left: 10px;
+        }
+
+        .terminalInput:focus {
+            outline: none;
+            caret-shape: block;
+        }
+
+        .root {
+            color: #f5084f;
+        }
+
+        .dir {
+            color: #149bda;
+        }
+
+        .sym {
+            color: #18A558;
+        }
+
+        .name {
+            color: #149bda;
+        }
+
+        .error {
+            color: #cc0000;
+        }
+
+        .info {
+            color: #49759C;
+            margin-left: 2.5%;
+        }
+    </style>
 </head>
+
 <body>
     <pre style="color:white;">
         ____  __.              __  .__ __    
@@ -77,95 +91,101 @@ body {
     <div style="margin-left: 4%; margin-bottom: 2%; color: white; font-family: Quicksand, sans-serif;">
         Welcome to my website! <br> <br> Type 'help' to see a list of available commands</div>
     <script>
-    let functions = ['cd', 'ls', 'help', 'exit'];
-    let dirList = ['home', 'about', 'projects', 'contact'];
-    function terminal(){
-        const div = document.createElement('div');
-        div.className = 'line';
-        div.innerHTML = 
-        '<span class="root">root</span><span class="name">@kartikpulipati:</span><span class="dir">~</span><span class="sym">$</span>';
-        document.body.appendChild(div);
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.className = 'terminalInput';
-        div.appendChild(input);
-        input.focus();
-        reSize();
-    };
+        let functions = ['cd', 'ls', 'help', 'exit'];
+        let dirList = ['home', 'aboutme', 'projects', 'contact'];
+        function terminal() {
+            const div = document.createElement('div');
+            div.className = 'line';
+            div.innerHTML =
+                '<span class="root">root</span><span class="name">@kartikpulipati:</span><span class="dir">~</span><span class="sym">$</span>';
+            document.body.appendChild(div);
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'terminalInput';
+            div.appendChild(input);
+            input.focus();
+            reSize();
+        };
 
-    function findLastLine(){
-        let inputVal = document.getElementsByClassName('terminalInput');
-        let last = inputVal[inputVal.length-1];
-        return last;
-    }
-    function reSize(){
-        findLastLine().style.width = document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px';
-        console.log(document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px');
-    }
-    function addLine(text, isError){
-        let div = document.createElement('div');
-        if(isError){
-            div.className = 'line error';
+        function findLastLine() {
+            let inputVal = document.getElementsByClassName('terminalInput');
+            let last = inputVal[inputVal.length - 1];
+            return last;
         }
-        else{
-            div.className = 'line info';
+        function reSize() {
+            findLastLine().style.width = document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px';
+            console.log(document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px');
         }
-        div.innerHTML = text;
-        document.body.appendChild(div);
-        terminal();
-    }
-
-    terminal();
-
-    document.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        let last = findLastLine().value.split(' ');
-        if(last[0] == functions[0]){ //cd
-            if(last.length > 2){
-                addLine('cd: too many arguments', true);
+        function addLine(text, isError) {
+            let div = document.createElement('div');
+            if (isError) {
+                div.className = 'line error';
             }
-            else{
-                if (last[1] == '..'){
-                    addLine('cd: permission denied', true);
-                }
-                else if(dirList.includes(last[1])){
-                    window.location.href = last[1] + '.html';
-                }
-                else{
-                    addLine('cd: no such file or directory: ' + last[1], true);
-                }
+            else {
+                div.className = 'line info';
             }
-        }
-        else if(last[0] == functions[1]){ //ls
-            if(last.length > 1){
-                addLine('ls: too many arguments', true);
-            }
-            else{
-                addLine(dirList.join(' '), false);
-            }
-         }
-         else if(last[0] == functions[2]){ //help
-            addLine("<p> cd - change directory to access the webpages </p> <p> ls - list directory contents you can cd into </p>" +
-            "<p> help - displays this help </p> <p> exit - exit the shell </p>", false);
-         }
-         else if(last[0] == functions[3]){ //exit
-            window.close();
-         }
-         else if(last = ' '){
+            div.innerHTML = text;
+            document.body.appendChild(div);
             terminal();
-         }
-         else{
-            addLine('command not found: ' + last[0], true)
-         }
         }
-    });
 
-    document.addEventListener('click', function(event){
-        findLastLine().focus();
-    });
+        terminal();
 
-    window.onresize = reSize;
-    
+        document.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                let lastArr = findLastLine().value.split(' ');
+                while (lastArr.includes('')) {
+                    lastArr.splice(lastArr.indexOf(''), 1);
+                }
+                console.log(lastArr)
+                if (lastArr[0] == functions[0]) { //cd
+                    if (lastArr.length > 2) {
+                        addLine('cd: too many arguments', true);
+                    }
+                    else {
+                        if (lastArr[1] == '..') {
+                            333
+                            addLine('cd: permission denied', true);
+                        }
+                        else if (dirList.includes(lastArr[1])) {
+                            window.location.href = lastArr[1] + '.html';
+                        }
+                        else {
+                            addLine('cd: no such file or directory: ' + lastArr[1], true);
+                        }
+                    }
+                }
+                else if (lastArr[0] == functions[1]) { //ls
+                    if (lastArr.length > 1) {
+                        addLine('ls: too many arguments', true);
+                    }
+                    else {
+                        addLine(dirList.join(' '), false);
+                    }
+                }
+                else if (lastArr[0] == functions[2]) { //help
+                    addLine("<p> cd - change directory to access the webpages </p> <p> ls - list directory contents you can cd into </p>" +
+                        "<p> help - displays this help </p> <p> exit - exit the shell </p>", false);
+                }
+                else if (lastArr[0] == functions[3]) { //exit
+                    window.close();
+                }
+                else if (lastArr.length == 0) {
+                    terminal();
+                }
+                else {
+                    addLine('command not found: ' + lastArr[0], true)
+                }
+            }
+        });
+
+        document.addEventListener('click', function (event) {
+            findLastLine().focus();
+        });
+
+        window.onresize = reSize;
+
     </script>
 </body>
+
 </html>
