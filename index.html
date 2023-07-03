@@ -114,7 +114,6 @@
         }
         function reSize() {
             findLastLine().style.width = document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px';
-            console.log(document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px');
         }
         function addLine(text, isError) {
             let div = document.createElement('div');
@@ -137,7 +136,6 @@
                 while (lastArr.includes('')) {
                     lastArr.splice(lastArr.indexOf(''), 1);
                 }
-                console.log(lastArr)
                 if (lastArr[0] == functions[0]) { //cd
                     if (lastArr.length > 2) {
                         addLine('cd: too many arguments', true);
