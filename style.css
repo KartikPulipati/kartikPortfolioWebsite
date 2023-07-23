@@ -28,15 +28,29 @@
 }
 
 #myNavbar {
-    border: 2px solid #1a1a1a;
-    border-radius: 10px;
+    /* border: 2px solid #1a1a1a;
+    border-radius: 10px; */
     transition: margin 0.5s, background 0.5s, border-radius 0.7s;
      -webkit-transition: margin 0.5s, background 0.5s, border-radius 0.5s;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.stationary{
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    border-bottom: #1a1a1a 2px solid;
+    border-radius: 0px;
+}
+
+.mobile{
+    border: 2px solid #1a1a1a;
+    border-radius: 50px;
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .button-33 {
