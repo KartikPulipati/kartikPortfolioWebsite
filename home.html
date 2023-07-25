@@ -1,67 +1,160 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Kartik's Space</title>
+    <link rel="icon" href="images/K.png" type="image/png" sizes="20x20">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@600&display=swap');
+
+        #start {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(244, 244, 250, .8) 1px, transparent 0),
+                linear-gradient(#f4f4fa 1px, transparent 0),
+                linear-gradient(90deg, rgba(244, 244, 250, .8) 1px, transparent 0),
+                linear-gradient(90deg, #f4f4fa 1px, transparent 0),
+                linear-gradient(transparent 3px, #fff 0, #fff 94px, transparent 0),
+                linear-gradient(90deg, #f4f4fa 3px, transparent 0, transparent 94px, #f4f4fa 0);
+            background-size: 24px 24px, 96px 96px, 24px 24px, 96px 96px, 96px 96px, 96px 96px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #startText {
+            margin-left: 43vh;
+            color: #14C2C6;
+            font-weight: 700;
+            font-family: 'Tektur', cursive;
+            font-size: 6vw;
+            animation: lightSpeedInLeft 1s ease-in-out;
+        }
+
+        #subText{
+            animation: lightSpeedInLeft 1s ease-in-out;
+
+        }
+
+        #subText span {
+            margin-left: 50vh;
+            font-size: 2vw;
+        }
+
+        #subText span a {
+            color: inherit;
+            text-decoration: inherit;
+            transition: color 0.5s linear;
+            -webkit-transition: color 0.5s linear;
+            -moz-transition: color 0.5s linear;
+            -o-transition: color 0.5s linear;
+        }
+
+        #subText span a:hover {
+            color: #14C2C6;
+        }
+
+        i:hover{
+            animation: ;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top stationary" id="myNavbar">
+        <div class="container-fluid" id="myNaItems">
+            <a class="navbar-brand" href="home.html"><img src="images/K.png" alt="Logo" width="75" height="75"
+                    class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarItems"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse pullUpDown" id="navbarItems">
+                <ul class="navbar-nav">
+                    <li class="nav-item px-3 pullUpDown">
+                        <a class="nav-link" href="#">ITEM #1</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#">ITEM #2</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#">ITEM #3</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#">ITEM #4</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto" style="margin-left: auto; margin-right: 20px">
+
+                    <a class="button-33" href="index.html">Back to Terminal</a>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="start">
+        <div id="startText"> Kartik M. Pulipati
+        </div>
+        <div id="subText">
+            <span class="badge bg-dark">
+                <a href="https://github.com/KartikPulipati" target="_blank">
+                    <i style="margin-right: 1vh;" class="bi bi-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/kartik-pulipati/" target="_blank">
+                    <i style="margin-left: 1vh; margin-right: 1vh;" class="bi bi-linkedin"></i>
+                </a>
+
+                <a href="https://devpost.com/kartik-pulipati" target="_blank">
+                    <i style="margin-left: 1vh; margin-right: 1vh;" class="bi bi-code-slash"></i>
+                </a>
+
+                <a href="https://www.kaggle.com/kartikpulipati" target="_blank">
+                    <i style="margin-left: 1vh; margin-right: 1vh;" class="bi bi-database"></i>
+                </a>
+
+                <a href="mailto:kartik.pulipati@gmail.com" target="_blank">
+                    <i style="margin-left: 1vh; margin-right: 1vh;" class="bi bi-envelope-at-fill"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+    <h1>hello</h1>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
 
-    <link  rel="stylesheet" href="style.css">
-
-</head>
-<body>
-
-<nav class="navbar navbar-expand-lg fixed-top stationary" id="myNavbar">
-    <div class="container-fluid" id="myNaItems">
-        <a class="navbar-brand" href="home.html"><img src="K.png" alt="Logo" width="75" height="75"
-                                              class="d-inline-block align-text-top">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarItems"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse pullUpDown" id="navbarItems">
-            <ul class="navbar-nav">
-                <li class="nav-item px-3 pullUpDown">
-                    <a class="nav-link" href="#">ITEM #1</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link" href="#">ITEM #2</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link" href="#">ITEM #3</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a class="nav-link" href="#">ITEM #4</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto" style="margin-left: auto; margin-right: 20px">
-                
-                <a class="button-33" href="index.html">Back to Terminal</a>
-                
-            </ul>
-        </div>
-    </div>
-</nav>
+    <script src="js/navbar.js"></script>
 
 
-<div class="start">
-    
-</div>
-<h1>hello</h1>
-
-
-<script src="script.js"></script>
 </body>
+
 </html>
