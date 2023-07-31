@@ -8,7 +8,7 @@
     -moz-transition: width .8s ease;
     -o-transition: width .8s ease;
     transition: width .8s ease;
-    max-width: 80px;
+    max-width: 150px;
 }
 
 .nav-link:hover::after {
@@ -33,7 +33,6 @@
     -webkit-transition: margin 0.5s, background 0.5s, border-radius 0.5s;
     -moz-transition: margin 0.5s, background 0.5s, border-radius 0.7s;
     -o-transition: margin 0.5s, background 0.5s, border-radius 0.7s;
-    animation: zoomIn 1s;
 }
 
 .stationary {
@@ -71,7 +70,7 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     text-decoration: none !important;
-    max-width: 250px;
+    max-width: 220px;
 
 }
 

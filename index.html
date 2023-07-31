@@ -3,13 +3,13 @@
 
 <head>
     <title>Kartik's Terminal</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand&family=Source+Code+Pro&display=swap"
         rel="stylesheet">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro&display=swap');
 
@@ -23,7 +23,7 @@
 
         .line {
             width: 100%;
-            font: 1rem 'Source Code Pro', monospace;
+            font: max(1rem, 18px) 'Source Code Pro', monospace;
             margin-bottom: 10px;
 
         }
@@ -36,6 +36,7 @@
             font: inherit;
             border: none;
             margin-left: 10px;
+            font-size: 18px;
         }
 
         .terminalInput:focus {
@@ -113,7 +114,10 @@
             return last;
         }
         function reSize() {
-            findLastLine().style.width = document.getElementsByClassName('line')[0].offsetWidth - 220 + 'px';
+            findLastLine().style.width = (document.getElementsByClassName('line')[0].offsetWidth - 
+            (document.getElementsByClassName('root')[0].offsetWidth + document.getElementsByClassName('name')[0].offsetWidth +
+            document.getElementsByClassName('dir')[0].offsetWidth + document.getElementsByClassName('sym')[0].offsetWidth + 20)) + 'px';
+            
         }
         function addLine(text, isError) {
             let div = document.createElement('div');

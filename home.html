@@ -21,6 +21,7 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500;900&display=swap');
 
         #start {
             width: 100%;
@@ -38,22 +39,16 @@
         }
 
         #startText {
-            margin-left: 43vh;
+            margin-left: 19vw;
             color: #14C2C6;
             font-weight: 700;
             font-family: 'Tektur', cursive;
-            font-size: 6vw;
-            animation: lightSpeedInLeft 1s ease-in-out;
-        }
-
-        #subText{
-            animation: lightSpeedInLeft 1s ease-in-out;
-
+            font-size: 8vw;
         }
 
         #subText span {
-            margin-left: 50vh;
-            font-size: 2vw;
+            margin-left: 23vw;
+            font-size: calc(8px + 1.5vw);
         }
 
         #subText span a {
@@ -68,14 +63,13 @@
         #subText span a:hover {
             color: #14C2C6;
         }
-
     </style>
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top stationary" id="myNavbar">
+    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__zoomIn" id="myNavbar">
         <div class="container-fluid" id="myNaItems">
             <a class="navbar-brand" href="home.html"><img src="images/K.png" alt="Logo" width="75" height="75"
                     class="d-inline-block align-text-top">
@@ -87,7 +81,7 @@
             <div class="collapse navbar-collapse pullUpDown" id="navbarItems">
                 <ul class="navbar-nav">
                     <li class="nav-item px-3 pullUpDown">
-                        <a class="nav-link" href="#">ITEM #1</a>
+                        <a class="nav-link" href="projects.html">PROJECTS</a>
                     </li>
                     <li class="nav-item px-3">
                         <a class="nav-link" href="#">ITEM #2</a>
@@ -110,9 +104,9 @@
 
 
     <div id="start">
-        <div id="startText"> Kartik M. Pulipati
+        <div class="animate__animated animate__lightSpeedInLeft" id="startText"> Kartik M. Pulipati
         </div>
-        <div id="subText">
+        <div class="animate__animated animate__lightSpeedInLeft" id="subText">
             <span class="badge bg-dark">
                 <a href="https://github.com/KartikPulipati" target="_blank">
                     <i style="margin-right: 1vh;" class="bi bi-github"></i>
@@ -136,7 +130,9 @@
             </span>
         </div>
     </div>
-    <h1>hello</h1>
+
+
+
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
@@ -153,5 +149,9 @@
 
 
 </body>
+<script>
+
+
+</script>
 
 </html>
