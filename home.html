@@ -44,11 +44,16 @@
             font-weight: 700;
             font-family: 'Tektur', cursive;
             font-size: 8vw;
+            text-shadow: 0px 3px 0px #32d0d3,
+                0px 14px 10px rgba(0, 0, 0, 0.15),
+                0px 24px 2px rgba(0, 0, 0, 0.1),
+                0px 34px 30px rgba(0, 0, 0, 0.1);
         }
 
         #subText span {
             margin-left: 23vw;
             font-size: calc(8px + 1.5vw);
+
         }
 
         #subText span a {
@@ -69,7 +74,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__zoomIn" id="myNavbar">
+    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__backInDown" id="myNavbar">
         <div class="container-fluid" id="myNaItems">
             <a class="navbar-brand" href="home.html"><img src="images/K.png" alt="Logo" width="75" height="75"
                     class="d-inline-block align-text-top">
@@ -81,10 +86,10 @@
             <div class="collapse navbar-collapse pullUpDown" id="navbarItems">
                 <ul class="navbar-nav">
                     <li class="nav-item px-3 pullUpDown">
-                        <a class="nav-link" href="projects.html">PROJECTS</a>
+                        <a class="nav-link" href="home.html">HOME</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="#">ITEM #2</a>
+                        <a class="nav-link" href="projects.html">PROJECTS</a>
                     </li>
                     <li class="nav-item px-3">
                         <a class="nav-link" href="#">ITEM #3</a>
@@ -104,7 +109,7 @@
 
 
     <div id="start">
-        <div class="animate__animated animate__lightSpeedInLeft" id="startText"> Kartik M. Pulipati
+        <div class="animate__animated animate__slideInLeft" id="startText"> Kartik M. Pulipati
         </div>
         <div class="animate__animated animate__lightSpeedInLeft" id="subText">
             <span class="badge bg-dark">
@@ -131,9 +136,6 @@
         </div>
     </div>
 
-
-
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
@@ -147,11 +149,6 @@
 
     <script src="js/navbar.js"></script>
 
-
 </body>
-<script>
-
-
-</script>
 
 </html>

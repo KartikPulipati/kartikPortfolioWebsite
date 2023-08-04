@@ -21,6 +21,7 @@
     -o-transition: font-size 0.5s ease, color 1s ease;
     transition: font-size 0.5s ease, color 1s ease;
     font-size: 1em;
+    font-weight: 500;
 }
 
 .nav-link:hover {
@@ -43,13 +44,15 @@
     border-radius: 0px;
 }
 
+
+
 .mobile {
     border: 2px solid #1a1a1a;
     border-radius: 50px;
     margin-top: 5px;
     margin-left: 50px;
     margin-right: 50px;
-    background: rgba(250, 249, 246, 0.7);
+    background: rgba(250, 249, 246, 0.9);
 }
 
 .button-33 {
@@ -75,9 +78,6 @@
 }
 
 .button-33:hover {
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;    
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     transform: scale(1.05) rotate(-1deg);
 }
-
-
-

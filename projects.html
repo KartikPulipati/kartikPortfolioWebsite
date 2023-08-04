@@ -11,10 +11,70 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500;900&family=Orbitron&display=swap');
+
+        #projects {
+            margin-top: 18vh;
+            margin-bottom: 10vh;
+        }
+
+        #projectsTitle {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+        }
+
+        #cards {
+            padding-top: 4vh;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            row-gap: 4vh;
+            column-gap: 2vw;
+        }
+
+        .card-outline {
+            border-radius: 4px;
+            background: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+            padding: 0.5%;
+            height: fit-content;
+            width: fit-content;
+            box-shadow: 0 29px 52px rgba(0,0,0,0.40), 0 25px 16px rgba(0,0,0,0.20);        
+        }
+
+        .card {
+            background-color: #181818;
+            color: white;
+            border-radius: 4px;
+            height: 50vh;
+        }
+
+        .card-text{
+            height: 32vh;
+        }
+
+        .card-link {
+           text-decoration: none;
+           padding: 0.5rem;
+           border: #5f72bd 1px solid;
+           border-width: 3px;
+           border-radius: 20px;
+           color: white;
+           font-size: 2vh;
+        }
+
+        .card-link:hover{
+            
+        }
+
+
+    </style>
 </head>
 
 <body>
@@ -31,10 +91,10 @@
             <div class="collapse navbar-collapse pullUpDown" id="navbarItems">
                 <ul class="navbar-nav">
                     <li class="nav-item px-3 pullUpDown">
-                        <a class="nav-link" href="projects.html">Projects</a>
+                        <a class="nav-link" href="home.html">HOME</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="#">ITEM #2</a>
+                        <a class="nav-link" href="projects.html">PROJECTS</a>
                     </li>
                     <li class="nav-item px-3">
                         <a class="nav-link" href="#">ITEM #3</a>
@@ -51,6 +111,81 @@
             </div>
         </div>
     </nav>
+
+    <div class="container" id="projects">
+        <header id="projectsTitle">Projects</header>
+
+        <div id="cards">
+            <div class="card-outline">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-outline">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-outline">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+                        </p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-outline">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+                        </p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-outline">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+                        </p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
