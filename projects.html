@@ -66,7 +66,8 @@
             border-width: 3px;
             border-radius: 20px;
             color: white;
-            font-size: 1em;
+            font-size: 0.9rem;
+            margin: 0;
         }
 
         @media(prefer-reduced-motion) {
@@ -87,26 +88,6 @@
             transform: translateX(0);
             filter: blur(0px);
         }
-
-        /* #cards .card-outline:nth-child(1) {
-            transition-delay: 100ms;
-        }
-
-        #cards .card-outline:nth-child(2) {
-            transition-delay: 200ms;
-        }
-
-        #cards .card-outline:nth-child(3) {
-            transition-delay: 300ms;
-        }
-
-        #cards .card-outline:nth-child(4) {
-            transition-delay: 400ms;
-        }
-
-        #cards .card-outline:nth-child(5) {
-            transition-delay: 500ms;
-        } */
     </style>
 </head>
 
@@ -157,7 +138,7 @@
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                         <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Another link</a>
                     </div>
                 </div>
             </div>
@@ -169,8 +150,8 @@
                         <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
+                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Another link</a>
                     </div>
                 </div>
             </div>
@@ -183,8 +164,8 @@
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.
                         </p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
+                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Another link</a>
                     </div>
                 </div>
             </div>
@@ -197,8 +178,8 @@
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.
                         </p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
+                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Another link</a>
                     </div>
                 </div>
             </div>
@@ -211,8 +192,8 @@
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.
                         </p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
+                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Another link</a>
                     </div>
                 </div>
             </div>
@@ -249,7 +230,7 @@
     const total_num = document.getElementsByClassName('card-outline').length;
 
     const rows = Math.ceil(total_num / max_columns);
-    
+
     let col_num = 1;
     let delay = 100;
     for (let i = 0; i < total_num; i++) {
@@ -257,7 +238,7 @@
         card.style.transitionDelay = delay + "ms";
         console.log(card, card.style.transitionDelay);
         console.log(card, delay);
-        if(col_num == max_columns) {
+        if (col_num == max_columns) {
             col_num = 1;
             delay = 100;
         }
@@ -283,11 +264,6 @@
     targets.forEach(function (target) {
         observer.observe(target);
     });
-
-
-
-
-
 </script>
 
 </html>
