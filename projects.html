@@ -111,10 +111,7 @@
                         <a class="nav-link" href="projects.html">PROJECTS</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="#">ITEM #3</a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="#">ITEM #4</a>
+                        <a class="nav-link" href="aboutme.html">ABOUT ME</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto" style="margin-left: auto; margin-right: 20px">
@@ -213,57 +210,57 @@
         crossorigin="anonymous"></script>
 
     <script src="js/navbar.js"></script>
-</body>
-<script>
-    function spacing() {
-        const navbar_height = document.getElementById('myNavbar').offsetHeight;
-        document.getElementById('projects').style.marginTop = (navbar_height + 30) + 'px';
-    }
-    spacing();
-    window.addEventListener('resize', spacing);
-
-    const container_width = document.getElementById('cards').offsetWidth;
-    const cards = document.getElementsByClassName('card-outline')[0];
-
-    const max_columns = Math.floor((0.96 * container_width) / cards.offsetWidth);
-
-    const total_num = document.getElementsByClassName('card-outline').length;
-
-    const rows = Math.ceil(total_num / max_columns);
-
-    let col_num = 1;
-    let delay = 100;
-    for (let i = 0; i < total_num; i++) {
-        const card = document.getElementsByClassName('card-outline')[i];
-        card.style.transitionDelay = delay + "ms";
-        console.log(card, card.style.transitionDelay);
-        console.log(card, delay);
-        if (col_num == max_columns) {
-            col_num = 1;
-            delay = 100;
+    <script>
+        function spacing() {
+            const navbar_height = document.getElementById('myNavbar').offsetHeight;
+            document.getElementById('projects').style.marginTop = (navbar_height + 30) + 'px';
         }
-        else {
-            col_num++;
-            delay += 100;
-        }
-    }
+        spacing();
+        window.addEventListener('resize', spacing);
 
+        const container_width = document.getElementById('cards').offsetWidth;
+        const cards = document.getElementsByClassName('card-outline')[0];
 
-    function handleIntersection(entries) {
-        entries.map((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show')
+        const max_columns = Math.floor((0.96 * container_width) / cards.offsetWidth);
+
+        const total_num = document.getElementsByClassName('card-outline').length;
+
+        const rows = Math.ceil(total_num / max_columns);
+
+        let col_num = 1;
+        let delay = 100;
+        for (let i = 0; i < total_num; i++) {
+            const card = document.getElementsByClassName('card-outline')[i];
+            card.style.transitionDelay = delay + "ms";
+            console.log(card, card.style.transitionDelay);
+            console.log(card, delay);
+            if (col_num == max_columns) {
+                col_num = 1;
+                delay = 100;
             }
+            else {
+                col_num++;
+                delay += 100;
+            }
+        }
+
+
+        function handleIntersection(entries) {
+            entries.map((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show')
+                }
+            });
+        }
+
+        const observer = new IntersectionObserver(handleIntersection);
+
+        const targets = document.querySelectorAll('.card-outline');
+
+        targets.forEach(function (target) {
+            observer.observe(target);
         });
-    }
-
-    const observer = new IntersectionObserver(handleIntersection);
-
-    const targets = document.querySelectorAll('.card-outline');
-
-    targets.forEach(function (target) {
-        observer.observe(target);
-    });
-</script>
+    </script>
+</body>
 
 </html>
