@@ -20,8 +20,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500;900&family=Orbitron&display=swap');
 
         #projects {
-            margin-top: 18vh;
-            margin-bottom: 10vh;
+            margin-bottom: 150px;
         }
 
         #projectsTitle {
@@ -35,51 +34,85 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: flex-start;
-            row-gap: 4vh;
-            column-gap: 2vw;
+            row-gap: 25px;
+            column-gap: 2%;
         }
 
         .card-outline {
-            border-radius: 4px;
+            border-radius: 12px;
             background: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
             padding: 0.5%;
             height: fit-content;
             width: fit-content;
-            box-shadow: 0 29px 52px rgba(0,0,0,0.40), 0 25px 16px rgba(0,0,0,0.20);        
+            box-shadow: 0 29px 52px rgba(0, 0, 0, 0.40), 0 25px 16px rgba(0, 0, 0, 0.20);
         }
 
         .card {
             background-color: #181818;
             color: white;
-            border-radius: 4px;
-            height: 50vh;
+            border-radius: 12px;
+            height: 450px;
         }
 
-        .card-text{
-            height: 32vh;
+        .card-text {
+            height: 300px;
+            overflow: hidden;
         }
 
         .card-link {
-           text-decoration: none;
-           padding: 0.5rem;
-           border: #5f72bd 1px solid;
-           border-width: 3px;
-           border-radius: 20px;
-           color: white;
-           font-size: 2vh;
+            text-decoration: none;
+            padding: 0.5rem;
+            border: #5f72bd 1px solid;
+            border-width: 3px;
+            border-radius: 20px;
+            color: white;
+            font-size: 1em;
         }
 
-        .card-link:hover{
-            
+        @media(prefer-reduced-motion) {
+            hidden {
+                transition: none;
+            }
         }
 
+        .hidden {
+            opacity: 0;
+            transform: translateX(-100%);
+            filter: blur(5px);
+            transition: all 1s;
+        }
 
+        .show {
+            opacity: 1;
+            transform: translateX(0);
+            filter: blur(0px);
+        }
+
+        /* #cards .card-outline:nth-child(1) {
+            transition-delay: 100ms;
+        }
+
+        #cards .card-outline:nth-child(2) {
+            transition-delay: 200ms;
+        }
+
+        #cards .card-outline:nth-child(3) {
+            transition-delay: 300ms;
+        }
+
+        #cards .card-outline:nth-child(4) {
+            transition-delay: 400ms;
+        }
+
+        #cards .card-outline:nth-child(5) {
+            transition-delay: 500ms;
+        } */
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__zoomIn" id="myNavbar">
+    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__slideInDown" id="myNavbar">
         <div class="container-fluid" id="myNaItems">
             <a class="navbar-brand" href="home.html"><img src="images/K.png" alt="Logo" width="75" height="75"
                     class="d-inline-block align-text-top">
@@ -113,10 +146,10 @@
     </nav>
 
     <div class="container" id="projects">
-        <header id="projectsTitle">Projects</header>
+        <header class="animate__animated animate__slideInLeft" id="projectsTitle">Projects</header>
 
         <div id="cards">
-            <div class="card-outline">
+            <div class="card-outline hidden">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -129,7 +162,7 @@
                 </div>
             </div>
 
-            <div class="card-outline">
+            <div class="card-outline hidden">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -142,7 +175,7 @@
                 </div>
             </div>
 
-            <div class="card-outline">
+            <div class="card-outline hidden">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -156,7 +189,7 @@
                 </div>
             </div>
 
-            <div class="card-outline">
+            <div class="card-outline hidden">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -170,7 +203,7 @@
                 </div>
             </div>
 
-            <div class="card-outline">
+            <div class="card-outline hidden">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
@@ -194,11 +227,67 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
+
     <script src="js/navbar.js"></script>
 </body>
+<script>
+    function spacing() {
+        const navbar_height = document.getElementById('myNavbar').offsetHeight;
+        document.getElementById('projects').style.marginTop = (navbar_height + 30) + 'px';
+    }
+    spacing();
+    window.addEventListener('resize', spacing);
+
+    const container_width = document.getElementById('cards').offsetWidth;
+    const cards = document.getElementsByClassName('card-outline')[0];
+
+    const max_columns = Math.floor((0.96 * container_width) / cards.offsetWidth);
+
+    const total_num = document.getElementsByClassName('card-outline').length;
+
+    const rows = Math.ceil(total_num / max_columns);
+    
+    let col_num = 1;
+    let delay = 100;
+    for (let i = 0; i < total_num; i++) {
+        const card = document.getElementsByClassName('card-outline')[i];
+        card.style.transitionDelay = delay + "ms";
+        console.log(card, card.style.transitionDelay);
+        console.log(card, delay);
+        if(col_num == max_columns) {
+            col_num = 1;
+            delay = 100;
+        }
+        else {
+            col_num++;
+            delay += 100;
+        }
+    }
+
+
+    function handleIntersection(entries) {
+        entries.map((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show')
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(handleIntersection);
+
+    const targets = document.querySelectorAll('.card-outline');
+
+    targets.forEach(function (target) {
+        observer.observe(target);
+    });
+
+
+
+
+
+</script>
 
 </html>
