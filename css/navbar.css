@@ -3,7 +3,7 @@
     display: block;
     width: 0px;
     height: 3px;
-    background: #14C2C6;
+    background: rgb(43, 43, 43);
     -webkit-transition: width .8s ease;
     -moz-transition: width .8s ease;
     -o-transition: width .8s ease;
@@ -26,7 +26,7 @@
 
 .nav-link:hover {
     font-size: 1.32em !important;
-    color: #14C2C6;
+    color: black;
 }
 
 #myNavbar {
