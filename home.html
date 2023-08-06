@@ -25,7 +25,6 @@
 
         #start {
             width: 100%;
-            height: 100vh;
             background-image: linear-gradient(rgba(244, 244, 250, .8) 1px, transparent 0),
                 linear-gradient(#f4f4fa 1px, transparent 0),
                 linear-gradient(90deg, rgba(244, 244, 250, .8) 1px, transparent 0),
@@ -39,11 +38,11 @@
         }
 
         #startText {
-            margin-left: 19vw;
+            margin-left: 13vw;
             color: #14C2C6;
             font-weight: 700;
             font-family: 'Tektur', cursive;
-            font-size: 8vw;
+            font-size: 9vw;
             text-shadow: 0px 3px 0px #32d0d3,
                 0px 14px 10px rgba(0, 0, 0, 0.15),
                 0px 24px 2px rgba(0, 0, 0, 0.1),
@@ -52,8 +51,7 @@
 
         #subText span {
             margin-left: 23vw;
-            font-size: calc(8px + 1.5vw);
-
+            font-size: calc(8px + 2vw);
         }
 
         #subText span a {
@@ -74,7 +72,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__backInDown" id="myNavbar">
+    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__slideInDown" id="myNavbar">
         <div class="container-fluid" id="myNaItems">
             <a class="navbar-brand" href="home.html"><img src="images/K.png" alt="Logo" width="75" height="75"
                     class="d-inline-block align-text-top">
@@ -145,6 +143,10 @@
         crossorigin="anonymous"></script>
 
     <script src="js/navbar.js"></script>
+
+    <script>
+        document.getElementById('start').style.height = window.innerHeight + 'px';
+    </script>
 
 </body>
 

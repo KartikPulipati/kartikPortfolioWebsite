@@ -15,7 +15,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-
+    <style>
+        #aboutme{
+            margin-top: 30px;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            width: 80vw;
+            height: 300px;
+            background-color: #000;
+            border-radius: 50px;
+        }
+    </style>
 
 </head>
 <body>
@@ -49,6 +59,10 @@
         </div>
     </nav>
 
+    <div id="aboutme" class=""></div>
+    
+
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
@@ -59,6 +73,14 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
     <script src="js/navbar.js"></script>
+    <script>
+        function spacing() {
+            const navbar_height = document.getElementById('myNavbar').offsetHeight;
+            document.getElementById('aboutme').style.marginTop = (navbar_height + 50) + 'px';
+        }
+        spacing();
+        window.addEventListener('resize', spacing);
+    </script>
 
 </body>
 
