@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Handjet:wght@500;900&family=Orbitron&display=swap');
+
         #aboutme {
             margin-top: 30px;
             width: 80vw;
@@ -23,21 +25,28 @@
             border-radius: 20px;
             box-shadow: 0px 0px 10px 5px #b9b5b5;
             color: white;
-            overflow: scroll;
-        }
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scroll-snap-type: y mandatory;
 
-        #title {
-            font-size: 15vw;
         }
 
         .pg {
             display: flex;
             justify-content: center;
             align-items: center;
+            padding-left: 5%;
+            padding-right: 5%;
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+            font-family: 'Fredericka the Great', cursive;
         }
 
-        .hidden {
-            opacity: 0;
+        .add {
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
         }
 
         #aboutme::-webkit-scrollbar {
@@ -47,13 +56,14 @@
         #aboutme {
             -ms-overflow-style: none;
             scrollbar-width: none;
+
         }
     </style>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__slideInDown" id="myNavbar">
+    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__backInDown" id="myNavbar">
         <div class="container-fluid" id="myNaItems">
             <a class="navbar-brand" href="home.html"><img src="images/K.png" alt="Logo" width="75" height="75"
                     class="d-inline-block align-text-top">
@@ -86,14 +96,43 @@
 
     <div id="aboutme" class="container animate__animated animate__jackInTheBox">
         <div class="pg">
-            <h1 id="title">About Me</h1>
+            <h1 style="font-size: min(14vw, 260px);">About Me</h1>
+        </div>
+
+        <div class="pg">
+            <h1>Hi, I am Kartik! I study <span id="cs" class="add">computer science</span> student at <span id="college"
+                    class="add">UT Austin.</span></h1>
+        </div>
+
+        <div class="pg">
+            <h1>I have worked on a lot of CS Projects in areas like
+                <span class="add" id="wd">Web Dev</span>,
+                <span class="add" id="ml">Machine Learning</span>,
+                <span class="add" id="qc">Quantum Computing</span>, and
+                <span class="add" id="net">Networking</span>.
+            </h1>
         </div>
         <div class="pg">
-            <h1 id="">Hello</h1>
+            <h1 style="padding-right: 20px;">Moreover, I am an <span class="add" id="eg">Eagle</span> <span class="add"
+                    id="sc">Scout</span> from Troop 493.</h1>
+        </div>
+        <div class="pg">
+            <h1>I also enjoy learning <span class="add" id="phy">physics</span>, and I am currently focused on
+                <span class="add" id="qp">quantum physics</span> and <span class="add" id="op">optics</span>.
+            </h1>
+        </div>
+        <div class="pg">
+            <h1>Some of my other hobbies include playing <span class="add" id="vg">video games</span>,
+                <span class="add" id="read">reading</span>, and <span class="add" id="bp">backpacking</span>.
+            </h1>
+        </div>
+
+        <div class="pg">
+            <h1>My goal in life is to do something that allows me to combine my interests in <span id="cs"
+                    class="add">computer science</span>
+                and <span class="add" id="phy">physics</span>.</h1>
         </div>
     </div>
-
-
 
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
@@ -114,15 +153,73 @@
             let pages = document.getElementsByClassName('pg');
 
             for (let i = 0; i < pages.length; i++) {
-                pages[i].style.height = document.getElementById('aboutme').style.height;
+                pages[i].style.height = (document.getElementById('aboutme').offsetHeight) + 'px';
             }
-
-            console.log(pages[0].style.height);
         }
+        function colorChange(entries) {
+            entries.map((entry) => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id == 'cs') {
+                        entry.target.style.color = 'turquoise';
+                    }
+                    else if (entry.target.id == 'college') {
+                        entry.target.style.color = 'orange';
+                    }
+                    else if (entry.target.id == 'wd') {
+                        entry.target.style.color = '#00BFFF';
+                    }
+                    else if (entry.target.id == 'ml') {
+                        entry.target.style.color = '#FFD700';
+                    }
+                    else if (entry.target.id == 'qc') {
+                        entry.target.style.color = '#FF69B4';
+                    }
+                    else if (entry.target.id == 'net') {
+                        entry.target.style.color = '#E30B5C'
+                    }
+                    else if (entry.target.id == 'phy') {
+                        entry.target.style.color = '#29AB87'
+                    }
+                    else if (entry.target.id == 'qp') {
+                        entry.target.style.color = '#FF9999'
+                    }
+                    else if (entry.target.id == 'op') {
+                        entry.target.style.color = '#FFCC99'
+                    }
+                    else if (entry.target.id == 'vg') {
+                        entry.target.style.color = '#A95C68'
+                    }
+                    else if (entry.target.id == 'read') {
+                        entry.target.style.color = '#AFEEEE'
+                    }
+                    else if (entry.target.id == 'bp') {
+                        entry.target.style.color = '#9A7B4F'
+                    } else if (entry.target.id == 'eg') {
+                        entry.target.style.color = 'red'
+                    }
+                    else if (entry.target.id == 'sc') {
+                        entry.target.style.color = '#0096FF'
+                    }
+                } else {
+                    entry.target.style.color = 'white';
+                }
+            });
+        }
+
+        const observer = new IntersectionObserver(colorChange);
+
+        const targets = document.querySelectorAll('.add');
+
+        targets.forEach(function (target) {
+            observer.observe(target);
+        });
         spacing();
         window.addEventListener('resize', spacing);
 
-        
+        document.getElementById("aboutme").scrollTo({
+            top: 0,
+            left: 0,
+        });
     </script>
 
 </body>

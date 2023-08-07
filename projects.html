@@ -19,6 +19,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500;900&family=Orbitron&display=swap');
 
+
         #projects {
             margin-bottom: 150px;
         }
@@ -69,6 +70,12 @@
             color: white;
             font-size: 0.9rem;
             margin: 0;
+            transition: all 0.5s ease;
+        }
+
+        .card-link:hover {
+            background-color: #5f72bd;
+            color: white;
         }
 
         @media(prefer-reduced-motion) {
@@ -94,7 +101,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__slideInDown" id="myNavbar">
+    <nav class="navbar navbar-expand-lg fixed-top stationary animate__animated animate__backInDown" id="myNavbar">
         <div class="container-fluid" id="myNaItems">
             <a class="navbar-brand" href="home.html"><img src="images/K.png" alt="Logo" width="75" height="75"
                     class="d-inline-block align-text-top">
@@ -214,7 +221,7 @@
     <script>
         function spacing() {
             const navbar_height = document.getElementById('myNavbar').offsetHeight;
-            document.getElementById('projects').style.marginTop = (navbar_height+ 30) + 'px';
+            document.getElementById('projects').style.marginTop = (navbar_height + 30) + 'px';
         }
         spacing();
         window.addEventListener('resize', spacing);
