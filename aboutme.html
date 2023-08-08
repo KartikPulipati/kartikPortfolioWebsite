@@ -42,6 +42,23 @@
             font-family: 'Fredericka the Great', cursive;
         }
 
+        #scrollHint {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            row-gap: 0px;
+            transition: opacity 1s ease;
+        }
+
+        #scrollHint i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+
+        }
+
         .add {
             -webkit-transition: all 1s ease;
             -moz-transition: all 1s ease;
@@ -97,6 +114,10 @@
     <div id="aboutme" class="container animate__animated animate__jackInTheBox">
         <div class="pg">
             <h1 style="font-size: min(14vw, 260px);">About Me</h1>
+            <div id="scrollHint" class="animate__animated animate__pulse animate__infinite">
+                <i class="bi bi-arrow-down-square"></i>
+            </div>
+
         </div>
 
         <div class="pg">
@@ -134,8 +155,7 @@
         </div>
 
         <div class="pg">
-            <h1>You can reach out to me at <span id="un"
-                    class="add">kartikpulipati</span>
+            <h1>You can reach out to me at <span id="un" class="add">kartikpulipati</span>
                 on <span class="add" id="dis">Discord</span>.</h1>
         </div>
 
@@ -152,7 +172,7 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
     <script src="js/navbar.js"></script>
-    <script>
+    <script defer>
         function spacing() {
             const navbar_height = document.getElementById('myNavbar').offsetHeight;
             document.getElementById('aboutme').style.marginTop = (navbar_height + 50) + 'px';
@@ -218,7 +238,6 @@
                 }
             });
         }
-
         const observer = new IntersectionObserver(colorChange);
 
         const targets = document.querySelectorAll('.add');
@@ -233,6 +252,18 @@
             top: 0,
             left: 0,
         });
+        
+        let numScrolled = 0;
+        function handleScroll() {
+            if (numScrolled > 0) {
+                document.getElementById("scrollHint").style.opacity = 0;
+                document.getElementById("aboutme").removeEventListener('scroll', handleScroll);
+            }
+            numScrolled++;
+        }
+        
+        document.getElementById("aboutme").addEventListener('scroll', handleScroll);
+            
     </script>
 
 </body>
