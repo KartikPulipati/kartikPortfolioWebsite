@@ -23,8 +23,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@600&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500;900&display=swap');
 
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        * {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
         #start {
             width: 100%;
+            /* height: 100vh; */
             background-image: linear-gradient(rgba(244, 244, 250, .8) 1px, transparent 0),
                 linear-gradient(#f4f4fa 1px, transparent 0),
                 linear-gradient(90deg, rgba(244, 244, 250, .8) 1px, transparent 0),
@@ -147,7 +157,11 @@
     <script src="js/navbar.js"></script>
 
     <script>
-        document.getElementById('start').style.height = window.innerHeight + 'px';
+        function sizing() {
+            document.getElementById('start').style.height = window.innerHeight + 'px';
+        }
+       sizing();
+        window.addEventListener('resize', sizing);
     </script>
 
 </body>

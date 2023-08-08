@@ -18,6 +18,15 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Handjet:wght@500;900&family=Orbitron&display=swap');
 
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        * {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         #aboutme {
             margin-top: 30px;
             width: 80vw;
@@ -71,7 +80,6 @@
         #aboutme {
             -ms-overflow-style: none;
             scrollbar-width: none;
-
         }
     </style>
 
@@ -247,7 +255,7 @@
         window.addEventListener('resize', spacing);
 
         document.getElementById("aboutme").scrollTop = 100;
-        
+
         let numScrolled = 0;
         function handleScroll() {
             if (numScrolled > 0) {
@@ -256,9 +264,9 @@
             }
             numScrolled++;
         }
-        
+
         document.getElementById("aboutme").addEventListener('scroll', handleScroll);
-            
+
     </script>
 
 </body>
