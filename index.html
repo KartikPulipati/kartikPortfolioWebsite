@@ -94,8 +94,10 @@
     <div style="margin-left: 4%; margin-bottom: 2%; color: white; font-family: Quicksand, sans-serif;">
         Welcome to my website! <br> <br> Type 'help' to see a list of available commands</div>
     <script>
+        if ("ontouchstart" in document.documentElement) {
+            window.location.href = "home.html";
+        }
         
-
         let functions = ['cd', 'ls', 'help', 'exit'];
         let dirList = ['home', 'aboutme', 'projects'];
         function terminal() {
