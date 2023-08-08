@@ -3,7 +3,7 @@
 
 <head>
     <title>Kartik's Terminal</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -94,6 +94,8 @@
     <div style="margin-left: 4%; margin-bottom: 2%; color: white; font-family: Quicksand, sans-serif;">
         Welcome to my website! <br> <br> Type 'help' to see a list of available commands</div>
     <script>
+        
+
         let functions = ['cd', 'ls', 'help', 'exit'];
         let dirList = ['home', 'aboutme', 'projects'];
         function terminal() {
@@ -116,10 +118,10 @@
             return last;
         }
         function reSize() {
-            findLastLine().style.width = (document.getElementsByClassName('line')[0].offsetWidth - 
-            (document.getElementsByClassName('root')[0].offsetWidth + document.getElementsByClassName('name')[0].offsetWidth +
-            document.getElementsByClassName('dir')[0].offsetWidth + document.getElementsByClassName('sym')[0].offsetWidth + 20)) + 'px';
-            
+            findLastLine().style.width = (document.getElementsByClassName('line')[0].offsetWidth -
+                (document.getElementsByClassName('root')[0].offsetWidth + document.getElementsByClassName('name')[0].offsetWidth +
+                    document.getElementsByClassName('dir')[0].offsetWidth + document.getElementsByClassName('sym')[0].offsetWidth + 20)) + 'px';
+
         }
         function addLine(text, isError) {
             let div = document.createElement('div');

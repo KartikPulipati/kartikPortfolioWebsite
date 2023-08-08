@@ -246,10 +246,7 @@
         spacing();
         window.addEventListener('resize', spacing);
 
-        document.getElementById("aboutme").scrollTo({
-            top: 0,
-            left: 0,
-        });
+        document.getElementById("aboutme").scrollTop = 100;
         
         let numScrolled = 0;
         function handleScroll() {
