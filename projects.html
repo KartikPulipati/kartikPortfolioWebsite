@@ -266,13 +266,16 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Security Camera - AP Computer Science Class</h5>
-                        <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-award"></i> Highest Score in Class</h6>
+                        <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-award"></i> Highest Score in Class
+                        </h6>
                         <p class="card-text">A group project in my AP Computer Science class where I used a Raspberry Pi
-                            to stream video, which can be viewed from my computer. The stream was run through a python, OpenCV program
-                            that detects people's faces and sends an email with the face. 
+                            to stream video, which can be viewed from my computer. The stream was run through a python,
+                            OpenCV program
+                            that detects people's faces and sends an email with the face.
                             For more information, click on the link.
                         </p>
-                        <a target="_blank" href="https://github.com/KartikPulipati/Security_Camera_Project" class="card-link">
+                        <a target="_blank" href="https://github.com/KartikPulipati/Security_Camera_Project"
+                            class="card-link">
                             <i class="bi bi-link-45deg"></i> Repository
                         </a>
                     </div>
@@ -284,9 +287,12 @@
                     <div class="card-body">
                         <h5 class="card-title">PriceChecker - Amazon, Target, Walmart</h5>
                         <h6 class="card-subtitle mb-2 text-muted"></h6>
-                        <p class="card-text">One of my first independent projects with the Django web frameworks and API's.
-                            It is a website that searches the item you are searching in Amazon, Target, and Walmart. You can compare
-                            the prices of the item and see which store has the best price. For more information, click on the link.
+                        <p class="card-text">One of my first independent projects with the Django web frameworks and
+                            API's.
+                            It is a website that searches the item you are searching in Amazon, Target, and Walmart. You
+                            can compare
+                            the prices of the item and see which store has the best price. For more information, click
+                            on the link.
                         </p>
                         <a target="_blank" href="https://github.com/KartikPulipati/PriceChecker" class="card-link">
                             <i class="bi bi-link-45deg"></i> Repository
@@ -326,6 +332,10 @@
         const total_num = document.getElementsByClassName('card-outline').length;
 
         const rows = Math.ceil(total_num / max_columns);
+
+        if (rows > 2) {
+            document.getElementById('cards').style.justifyContent = 'center';
+        }
 
         let col_num = 1;
         let delay = 100;
