@@ -21,7 +21,7 @@
 
 
         #projects {
-            margin-bottom: 150px;
+            margin-bottom: 100px;
         }
 
         #projectsTitle {
@@ -56,8 +56,21 @@
             height: 450px;
         }
 
+        .card-title {
+            height: 13%;
+
+        }
+
+        .card-subtitle {
+            height: 5%;
+        }
+
+        .card-subtitle i {
+            color: #FFD700;
+        }
+
         .card-text {
-            height: 300px;
+            height: 65%;
             overflow: hidden;
         }
 
@@ -87,7 +100,7 @@
         .hidden {
             opacity: 0;
             transform: translateX(-100%);
-            filter: blur(5px);
+            filter: blur(3px);
             transition: all 1s;
         }
 
@@ -95,6 +108,10 @@
             opacity: 1;
             transform: translateX(0);
             filter: blur(0px);
+        }
+
+        .text-muted {
+            color: #DCDCDC !important;
         }
     </style>
 </head>
@@ -138,39 +155,23 @@
             <div class="card-outline hidden">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
-                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Another link</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-outline hidden">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
-                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Another link</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-outline hidden">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                        <h5 class="card-title">Classifying Emotions with Missing Parts of the Face</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-award"></i> 2nd place at ACSEF</h6>
+                        <p class="card-text">
+                            This is a machine learning project that aims to detect emotion but with parts of the face
+                            cutoff such that
+                            it mimics someone wearing
+                            a VR Headset. This project was done for the 2022 Alameda County Science and Engineering
+                            Fair.
+                            For more information, click on the links.
                         </p>
-                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
-                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Another link</a>
+                        <a target="_blank" href="https://github.com/KartikPulipati/ScienceFairCode" class="card-link">
+                            <i class="bi bi-link-45deg"></i> Repository
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/10NvTXy5wZLio0h9cLDDXin6z583463pS?usp=drive_link"
+                            class="card-link">
+                            <i class="bi bi-link-45deg"></i> Drive
+                        </a>
                     </div>
                 </div>
             </div>
@@ -178,13 +179,22 @@
             <div class="card-outline hidden">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                        <h5 class="card-title">Obscurity in Machine Learning</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-award"></i> Published in CAJ</h6>
+                        <p class="card-text">This paper expands on my work in the science fair. I use different datasets
+                            and models
+                            to see how they deal with data that is obscured. This paper was published in Curieux
+                            Academic
+                            Journal in the January 2023 issue. For the actual paper, click on the link named Paper and
+                            go to page 20.
+                            For the code, click on the link named
+                            Repository.
                         </p>
-                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
-                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Another link</a>
+                        <a target="_blank"
+                            href="https://www.curieuxacademicjournal.com/_files/ugd/99711c_b41050487f9f42fc961bc25791f40362.pdf"
+                            class="card-link"> <i class="bi bi-link-45deg"></i> Paper</a>
+                        <a target="_blank" href="https://github.com/KartikPulipati/Natural_Scenes" class="card-link"> <i
+                                class="bi bi-link-45deg"></i> Repository</a>
                     </div>
                 </div>
             </div>
@@ -192,13 +202,95 @@
             <div class="card-outline hidden">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                        <h5 class="card-title">Better Gardens - Ohlone Hacks</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-award"></i> Winner</h6>
+                        <p class="card-text">My teammates and I created a website that allows users to
+                            create a virtual garden and get information about the plants they are growing. We used HTML,
+                            CSS,
+                            JavaScript, Python, and Django. This was submitted to Ohlone Hacks. For more information,
+                            click on the links.
                         </p>
-                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Card link</a>
-                        <a href="#" class="card-link"> <i class="bi bi-link-45deg"></i> Another link</a>
+                        <a target="_blank" href="https://github.com/ArhanChaudhary/OhloneHacks" class="card-link">
+                            <i class="bi bi-link-45deg"></i> Repository
+                        </a>
+                        <a target="_blank" href="https://devpost.com/software/better-gardens" class="card-link">
+                            <i class="bi bi-link-45deg"></i> Devpost
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-outline hidden">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Votri - Internship with Alan AI</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-award"></i> Featured on Website</h6>
+                        <p class="card-text">Won an Internship with Alan AI. In the Internship we made a game using
+                            their voice assistant
+                            API. The game is called Votri and it is a trivia game. For more information, click on the
+                            links. This project
+                            was featured on their website for a short time.
+                        </p>
+                        <a target="_blank" href="https://github.com/KartikPulipati/VoTri" class="card-link">
+                            <i class="bi bi-link-45deg"></i> Repository
+                        </a>
+                        <a target="_blank" href="https://alan.app/" class="card-link"> <i class="bi bi-link-45deg"></i>
+                            Alan AI</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-outline hidden">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Rally - Merge 2022 Hack-a-thon</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-award"></i> Winner</h6>
+                        <p class="card-text">A project that was submitted to Merge 2022. It is a website that allows
+                            users to talk
+                            to people around them(same zipcode) with an asynchronous chat. The intended use is to bring
+                            people together
+                            to talk about local issues especially climate change. For more information, click on the
+                            links.
+                        </p>
+                        <a target="_blank" href="https://github.com/KartikPulipati/rally" class="card-link">
+                            <i class="bi bi-link-45deg"></i> Repository
+                        </a>
+                        <a target="_blank" href="https://devpost.com/software/rally-cf278e" class="card-link">
+                            <i class="bi bi-link-45deg"></i> Devpost
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-outline hidden">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Security Camera - AP Computer Science Class</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-award"></i> Highest Score in Class</h6>
+                        <p class="card-text">A group project in my AP Computer Science class where I used a Raspberry Pi
+                            to stream video, which can be viewed from my computer. The stream was run through a python, OpenCV program
+                            that detects people's faces and sends an email with the face. 
+                            For more information, click on the link.
+                        </p>
+                        <a target="_blank" href="https://github.com/KartikPulipati/Security_Camera_Project" class="card-link">
+                            <i class="bi bi-link-45deg"></i> Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-outline hidden">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">PriceChecker - Amazon, Target, Walmart</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text">One of my first independent projects with the Django web frameworks and API's.
+                            It is a website that searches the item you are searching in Amazon, Target, and Walmart. You can compare
+                            the prices of the item and see which store has the best price. For more information, click on the link.
+                        </p>
+                        <a target="_blank" href="https://github.com/KartikPulipati/PriceChecker" class="card-link">
+                            <i class="bi bi-link-45deg"></i> Repository
+                        </a>
                     </div>
                 </div>
             </div>

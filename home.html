@@ -38,24 +38,25 @@
         }
 
         #startText {
-            margin-left: 13vw;
-            background: linear-gradient( 109.6deg, rgb(103, 210, 205) 11.2%, rgba(110,123,251,1) 91.1% );
+            margin-left: 8vw;
+            background-image: url('images/phy-clip.jpg');
+            background-position: 100% 100%;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
             -moz-text-fill-color: transparent;
             -moz-background-clip: text;
             color: transparent;
             background-clip: text;
-            font-weight: 700;
             font-family: 'Tektur', cursive;
-            font-size: 9vw;
-            text-shadow: 6px 6px 10px rgba(47, 222, 235, 0.386);        
+            font-size: 10vw;
+            text-shadow: 6px 6px 10px rgba(196, 229, 231, 0.386);        
+
         }
 
         #subText span {
-            margin-left: 23vw;
-            font-size: calc(8px + 2vw);
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;        
+            margin-left: 20vw;
+            font-size: min(calc(8px + 2vw), 6vw);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
         #subText span a {
@@ -98,8 +99,9 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto" style="margin-left: auto; margin-right: 20px">
-
-                    <a class="button-33" href="index.html">Back to Terminal</a>
+                    <li class="nav-item">
+                        <a class="button-33" href="index.html">Back to Terminal</a>
+                    </li>
 
                 </ul>
             </div>
@@ -108,7 +110,7 @@
 
 
     <div id="start">
-        <div class="animate__animated animate__slideInLeft" id="startText"> Kartik M. Pulipati
+        <div class="animate__animated animate__fadeInRight" id="startText"> Kartik M. Pulipati
         </div>
         <div class="animate__animated animate__lightSpeedInLeft" id="subText">
             <span class="badge bg-dark">
